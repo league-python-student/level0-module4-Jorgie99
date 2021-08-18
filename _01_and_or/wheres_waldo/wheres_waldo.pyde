@@ -10,22 +10,32 @@ can_play_sounds = False
 
 def setup():
     # Find a Where's Waldo picture and drop it onto the sketch.
-    
+
     # Change the line below to match your file name.
     waldo = loadImage("waldo.jpg")
     
     # Use the size() function to set the width and height of your sketch
-
+    size(700, 500)
     # Resize your waldo picture to the same size as the sketch
-
+    new_image = waldo.resize(700, 500)
     # Use the background() function to make the waldo image your
     # sketch background
-
+    background(waldo)
     
 def draw():
     # If the user presses the mouse...
     # *Hint* use the mousePressed variable
-  
+    if mousePressed == True:
+        x = mouseX
+        y = mouseY
+        if ((x > 430) and (x < 485) and (y> 250) and (y < 350)) == True:
+            textSize(25)
+            text("Waldo found!", x, y)
+            fill('#FFFFFF')
+        if ((x > 430) and (x < 485) and (y> 250) and (y < 350)) == False:
+            textSize(25)
+            text("Not here!", x, y)
+            fill('#FFFFFF')
         # Use this print statement to help you find the location
         # of Waldo to use in the code below
     
