@@ -35,7 +35,10 @@ if __name__ == '__main__':
     window.withdraw()
 
     money_in_dollars = 3.00
-
+    while True:
+        vending_machine(money_in_dollars)
+        if money_in_dollars == 0.00:
+            break
     # TODO) Write a while loop that ends when you have no money left
 
         # TODO) Call the vending_machine() function and save the money spent
