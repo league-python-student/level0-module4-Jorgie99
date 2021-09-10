@@ -33,11 +33,24 @@ def vending_machine(money):
 if __name__ == '__main__':
     window = Tk()
     window.withdraw()
-
-    money_in_dollars = 3.00
+    money = 3.00
+    str(money)
     while True:
-        vending_machine(money_in_dollars)
-        if money_in_dollars == 0.00:
+        money_spent = vending_machine(money)
+        if money_spent == 0:
+            messagebox.showinfo(title=None, message='You have ' + str(money) + ' left.')
+            break
+        else:
+            money -= money_spent
+        if money == 0.00:
+            messagebox.showinfo(title=None, message='Congrats! You maximized your money!')
+            break
+        if money > 0:
+            pass
+        if money > 0:
+            pass
+        else:
+            messagebox.showinfo(title=None, message='You overspent!')
             break
     # TODO) Write a while loop that ends when you have no money left
 
